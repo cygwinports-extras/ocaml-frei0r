@@ -1,0 +1,18 @@
+inherit ocaml
+
+NAME="ocaml-frei0r"
+VERSION=0.1.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="OCaml Frei0r bindings"
+DESCRIPTION="OCaml bindings for the Frei0r video effect plugin API."
+REQUIRES="frei0r-sdk"
+HOMEPAGE="http://savonet.sourceforge.net/"
+SRC_URI="mirror://sourceforge/savonet/${NAME}-${VERSION}.tar.gz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygconf
+	cygmake -j1
+}
